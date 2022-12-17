@@ -1,0 +1,95 @@
+.productBlock .fon {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: black;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.productBlock.active {
+  opacity: 1;
+}
+
+.productBlock.active .fon {
+  opacity: 0.5;
+  pointer-events: all;
+}
+
+.productBlock .productCard {
+  position: fixed;
+  pointer-events: none;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 500px;
+  opacity: 0;
+  z-index: 3;
+  background: white;
+  overflow: scroll;
+  text-align: center;
+}
+
+.productBlock.active .productCard {
+  pointer-events: all;
+  opacity: 1;
+  animation: show 0.5s;
+}
+
+.productBlock .productCard .description {
+  padding: 10px;
+}
+
+.productBlock .productCard .closeBtn {
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  text-align: left;
+}
+.productBlock .productCardImg {
+  max-height: 60vh;
+}
+
+.productBlock .data {
+  display: flex;
+  gap: 20px;
+}
+
+.productBlock .basketBtn {
+  font-size: 20px;
+}
+
+.productBlock .basketBtn:focus {
+  animation: inbasket 0.5s;
+}
+
+.productBlock .title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.productBlock .price {
+  font-size: 1.3rem;
+  text-align: right;
+  margin-bottom: 20px;
+}
+@media (max-width: 500px) {
+  .productBlock .productCard {
+    max-width: 100%;
+  }
+}
+
+@keyframes show {
+  from {
+    transform: translateX(500px);
+  }
+}
+
+@keyframes inbasket {
+  50% {
+    transform: scale(0.8);
+  }
+}

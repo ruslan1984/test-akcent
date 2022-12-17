@@ -1,9 +1,10 @@
-import { FC } from "react";
+import { MouseEvent, FC } from "react";
 import { TProduct } from "./types";
 import Button from "atoms/Button";
 import "./styles.css";
 import { useDispatch } from "react-redux";
 import { actions } from "pages/basket/reducer";
+import { actions as productActions } from "pages/products/reducer";
 
 interface IProductsItem {
   data: TProduct;
@@ -13,11 +14,16 @@ const ProductsItem: FC<IProductsItem> = ({
   data,
 }: IProductsItem): JSX.Element => {
   const dispatch = useDispatch();
-  const addToBasket = () => {
+  const addToBasket = (e: MouseEvent) => {
+    e.stopPropagation();
     dispatch(actions.addToBasket(data));
   };
+  const onProductClick = () => {
+    dispatch(productActions.setActiveCardId(data.id));
+  };
+
   return (
-    <div className="productsItem">
+    <div className="productsItem" onClick={onProductClick}>
       <img className="productsItemImg" src={`${data.image}`} alt="" />
       <div className="description">
         <div className="title">{data.title}</div>
@@ -33,7 +39,6 @@ const ProductsItem: FC<IProductsItem> = ({
           Добавить в корзину
         </Button>
       </div>
-      <div></div>
     </div>
   );
 };

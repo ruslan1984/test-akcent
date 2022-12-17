@@ -9,6 +9,7 @@ export type TProductsSlice = {
   chekedIdList: number[];
   sortByPrice: TSort;
   currentPage: number;
+  activeCardId?: number;
 };
 
 export type { TProduct };

@@ -1,11 +1,11 @@
 import { memo, useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Presenter from "./Presenter";
+import ProductCard from "organisms/productCard";
 import { reducerType } from "store";
 import { actions, requestProducts } from "./reducer";
 
 const Products = (): JSX.Element => {
-  // const [currentPage, setCurrentPage] = useState(1);
   const { pagesCount, products, currentPage } = useSelector(
     (state: reducerType) => state.productsReducer
   );
@@ -23,12 +23,15 @@ const Products = (): JSX.Element => {
   );
 
   return (
-    <Presenter
-      data={products}
-      currentPage={currentPage}
-      pagesCount={pagesCount}
-      pageClick={pageClick}
-    />
+    <>
+      <Presenter
+        data={products}
+        currentPage={currentPage}
+        pagesCount={pagesCount}
+        pageClick={pageClick}
+      />
+      <ProductCard />
+    </>
   );
 };
 

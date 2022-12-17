@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FC, MouseEventHandler } from "react";
 import "./styles.css";
 
 interface IButton {
   children?: JSX.Element | JSX.Element[] | string;
   className?: string;
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
 }
 
 const Button: FC<IButton> = ({

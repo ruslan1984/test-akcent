@@ -8,6 +8,7 @@ export const defaultState: TProductsSlice = {
   chekedIdList: [],
   sortByPrice: 0,
   currentPage: 1,
+  activeCardId: 0,
 };
 
 export const requestProducts = createAction<number>("requestProducts");
@@ -39,6 +40,10 @@ export const productsSlice = createSlice({
       state,
       { payload: sortByPrice }: PayloadAction<TSort>
     ) => ({ ...state, sortByPrice, currentPage: 1 }),
+    setActiveCardId: (
+      state,
+      { payload: activeCardId }: PayloadAction<number>
+    ) => ({ ...state, activeCardId }),
   },
 });
 export const { actions, reducer } = productsSlice;
