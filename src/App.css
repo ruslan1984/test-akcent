@@ -1,0 +1,9 @@
+:root {
+  --baseColor: #49bcb0;
+}
+img {
+  max-width: 100%;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}

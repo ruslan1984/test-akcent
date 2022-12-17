@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  padding: 5px 15px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 6px 0px 9px 0px #a4a4a4;
+  box-sizing: border-box;
+}
+
+.menuItem {
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+  box-sizing: border-box;
+  border-bottom: 2px solid white;
+  transition: 0.3s;
+}
+
+.menuItem:hover {
+  color: var(--baseColor);
+}

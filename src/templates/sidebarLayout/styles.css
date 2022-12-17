@@ -1,0 +1,27 @@
+.sideBar {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+.sideBar .sidebarButtons {
+  display: flex;
+  flex-direction: column;
+}
+.sideBar .filter {
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .sideBar {
+    grid-template-columns: 1fr;
+  }
+  .sideBar .filter {
+    columns: 3;
+  }
+}
+
+@media (max-width: 500px) {
+  .sideBar .filter {
+    columns: 1;
+  }
+}

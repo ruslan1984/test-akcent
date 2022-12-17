@@ -1,0 +1,36 @@
+.productsList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px 10px;
+  margin-bottom: 50px;
+}
+.productsTitle {
+  font-size: 30px;
+}
+.productsList .isEmpty {
+  font-size: 3rem;
+  text-align: center;
+}
+.sortingBlock {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.sortingBlock .title {
+  margin-right: 5px;
+}
+.sortingBlock .select {
+  padding: 10px;
+}
+
+@media (max-width: 1024px) {
+  .productsList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .productsList {
+    grid-template-columns: 1fr;
+  }
+}

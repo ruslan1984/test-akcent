@@ -1,0 +1,28 @@
+.userData {
+  margin: 20px 0;
+}
+.userData .label {
+  min-width: 100px;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.userData .userDataLine {
+  padding: 5px;
+}
+
+.userData .userDataLine .input {
+  font-size: 20px;
+  min-width: 300px;
+  padding: 5px;
+}
+
+.basket .totalPrice {
+  font-size: 1.5rem;
+  text-align: right;
+  margin: 15px 0;
+}
+.basket .orderBtn {
+  font-size: 1.5rem;
+  padding: 20px;
+}

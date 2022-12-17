@@ -1,0 +1,57 @@
+.basketItem {
+  display: flex;
+  align-items: center;
+  border: 1px solid #eee;
+  padding: 20px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  gap: 15px;
+}
+
+.basketItem .basketItemImg {
+  max-height: 80px;
+}
+.basketItem .basketData {
+  flex: 1;
+}
+.basketItem .title {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.basketItem .basketItemDescription {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.basketItem .priceBlock {
+  display: flex;
+  flex-direction: column;
+  min-width: 100px;
+}
+
+.basketItem .price {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 5px 0;
+}
+.basketItem .input {
+  font-size: 20px;
+  width: 60px;
+}
+
+.basketItem .removeBtn {
+  background: rgb(227, 92, 92);
+  color: white;
+  font-size: 20px;
+  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.basketItem .removeBtn:hover {
+  background: rgb(227, 159, 159);
+}

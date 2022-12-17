@@ -1,0 +1,53 @@
+.modalBlock {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.modalBlock.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 6px 0px 9px 0px #a4a4a4;
+  z-index: 2;
+}
+.modalBlock .fon {
+  position: fixed;
+  background: #888;
+  opacity: 0.5;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.modalBlock .headText {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.modalBlock .text {
+  font-size: 1.1rem;
+  margin: 20px 0;
+}
+
+.modalBlock .buttonsBlock {
+  text-align: right;
+}
+.modalBlock .modalBtn {
+  font-size: 1.2rem;
+}

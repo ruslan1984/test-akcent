@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--baseColor);
+  padding: 20px;
+  gap: 15px;
+  min-height: 100px;
+}
+
+.footerMenuItem {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footerMenuItem:hover {
+  color: black;
+}

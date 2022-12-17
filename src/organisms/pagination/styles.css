@@ -1,0 +1,81 @@
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1px;
+  padding: 10px 5px;
+  border-radius: 5px;
+  background: #eee;
+  margin: 30px 0;
+  position: relative;
+}
+
+.pagination .paginationItem {
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.pagination .paginationItem:not(.disabled).active,
+.pagination .paginationItem:not(.disabled):hover {
+  background: var(--baseColor);
+  color: white;
+}
+
+.pagination .paginationItem.disabled {
+  color: #888;
+  pointer-events: none;
+}
+
+.pagination .dots {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.pagination .paginationMenuBlock {
+  display: flex;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.pagination .paginationMenuBlock:hover {
+  background: var(--baseColor);
+  color: white;
+}
+
+.pagination .paginationMenu {
+  flex-wrap: wrap;
+  display: flex;
+  background: white;
+  box-shadow: 2px 1px 8px #e4e0e0;
+  border-radius: 10px;
+  padding: 20px 10px;
+  transition: 0.3s;
+}
+.pagination .paginationBlock {
+  position: absolute;
+  opacity: 0;
+  max-width: 70vw;
+  bottom: 40px;
+  text-align: right;
+  transition: 0.3s;
+  pointer-events: none;
+}
+.pagination .paginationBlock.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.pagination .paginationBlock .close {
+  background: white;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  box-shadow: 2px 1px 8px #e4e0e0;
+}
