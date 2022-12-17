@@ -8,6 +8,7 @@ export type TProductsSlice = {
   pageSize: number;
   chekedIdList: number[];
   sortByPrice: TSort;
+  currentPage: number;
 };
 
 export type { TProduct };

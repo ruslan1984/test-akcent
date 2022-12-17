@@ -1,25 +1,25 @@
-import { useEffect, memo, useState, useCallback } from "react";
+import { memo, useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Presenter from "./Presenter";
 import { reducerType } from "store";
-import { requestProducts } from "./reducer";
+import { actions, requestProducts } from "./reducer";
 
 const Products = (): JSX.Element => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const { pagesCount, products } = useSelector(
+  // const [currentPage, setCurrentPage] = useState(1);
+  const { pagesCount, products, currentPage } = useSelector(
     (state: reducerType) => state.productsReducer
   );
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(requestProducts(currentPage));
-  }, [dispatch, currentPage]);
+    dispatch(requestProducts(1));
+  }, [dispatch]);
 
   const pageClick = useCallback(
     (page: number) => () => {
-      setCurrentPage(page);
+      dispatch(actions.setCurrentPage(page));
     },
-    []
+    [dispatch]
   );
 
   return (

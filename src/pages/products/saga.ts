@@ -18,7 +18,8 @@ function* requestProductsSaga({ payload: currentPage }: { payload: number }) {
       chekedIdList,
       sortByPrice
     );
-    const pagesCount = Math.round(count / pageSize);
+
+    const pagesCount = Math.ceil(count / pageSize);
     yield put(actions.setPagesCount(pagesCount));
     yield put(actions.setProducts(products));
   } catch (err) {
@@ -26,6 +27,9 @@ function* requestProductsSaga({ payload: currentPage }: { payload: number }) {
   }
 }
 
+function* setCurrentPageSaga({ payload }: { payload: number }) {
+  yield requestProductsSaga({ payload });
+}
 function* setSortByPriceSaga() {
   yield requestProductsSaga({ payload: 1 });
 }
@@ -44,6 +48,7 @@ function* clearFilterSaga() {
 
 export function* productsSaga() {
   yield takeEvery(requestProducts, requestProductsSaga);
+  yield takeEvery(actions.setCurrentPage, setCurrentPageSaga);
   yield takeEvery(actions.setSortByPrice, setSortByPriceSaga);
   yield takeEvery(submitFilter, submitFilterSaga);
   yield takeEvery(sidebarActions.clearFilter, clearFilterSaga);

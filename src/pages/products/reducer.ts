@@ -7,6 +7,7 @@ export const defaultState: TProductsSlice = {
   pageSize: 6,
   chekedIdList: [],
   sortByPrice: 0,
+  currentPage: 1,
 };
 
 export const requestProducts = createAction<number>("requestProducts");
@@ -15,21 +16,29 @@ export const productsSlice = createSlice({
   name: "productsSlice",
   initialState: defaultState,
   reducers: {
-    setProducts: (state, { payload: products }: PayloadAction<TProduct[]>) => {
-      return { ...state, products };
-    },
-    setPagesCount: (state, { payload }: PayloadAction<number>) => {
-      return { ...state, pagesCount: payload };
-    },
+    setProducts: (state, { payload: products }: PayloadAction<TProduct[]>) => ({
+      ...state,
+      products,
+    }),
+    setPagesCount: (state, { payload: pagesCount }: PayloadAction<number>) => ({
+      ...state,
+      pagesCount,
+    }),
+    setCurrentPage: (
+      state,
+      { payload: currentPage }: PayloadAction<number>
+    ) => ({
+      ...state,
+      currentPage,
+    }),
     setChekedIdList: (
       state,
       { payload: chekedIdList }: PayloadAction<number[]>
-    ) => {
-      return { ...state, chekedIdList };
-    },
-    setSortByPrice: (state, { payload: sortByPrice }: PayloadAction<TSort>) => {
-      return { ...state, sortByPrice };
-    },
+    ) => ({ ...state, chekedIdList, currentPage: 1 }),
+    setSortByPrice: (
+      state,
+      { payload: sortByPrice }: PayloadAction<TSort>
+    ) => ({ ...state, sortByPrice, currentPage: 1 }),
   },
 });
 export const { actions, reducer } = productsSlice;
