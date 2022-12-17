@@ -9,11 +9,12 @@
 
 .userData .userDataLine {
   padding: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .userData .userDataLine .input {
   font-size: 20px;
-  min-width: 300px;
   padding: 5px;
 }
 
@@ -25,4 +26,5 @@
 .basket .orderBtn {
   font-size: 1.5rem;
   padding: 20px;
+  margin: 0 auto;
 }

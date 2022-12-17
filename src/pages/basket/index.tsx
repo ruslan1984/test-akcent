@@ -22,7 +22,6 @@ const Basket: FC = () => {
 
   const onCloseCallback = () => {
     dispatch(actions.setOrderStatus(OrderStatus.await));
-
     navigate("/");
   };
   return (

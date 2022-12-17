@@ -42,6 +42,7 @@ const OrderForm = () => {
             <input className="input" ref={phoneRef} required type="tel" />
           </div>
         </div>
+
         <Button disabled={ordering} className="orderBtn">
           Оформить заказ
         </Button>

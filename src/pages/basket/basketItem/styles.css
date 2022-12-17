@@ -55,3 +55,9 @@
 .basketItem .removeBtn:hover {
   background: rgb(227, 159, 159);
 }
+
+@media (max-width: 440px) {
+  .basketItem {
+    flex-direction: column;
+  }
+}
